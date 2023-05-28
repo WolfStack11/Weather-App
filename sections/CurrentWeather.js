@@ -43,6 +43,23 @@ function displayCurrentWeather(city){
             <p class="fs-5">Vânt: <strong>${windSpeed} km/h</strong></p>
         </div>
         `;
+
+        const weatherBackground = document.querySelector(".weather-bg");
+        if(weather[0].id == 800) {
+            weatherBackground.style.background = 'linear-gradient(0deg, rgba(98,204,255,1) 0%, rgba(1,128,194,1) 100%)';
+        } else if (weather[0].id > 800 && weather[0].id < 804) {
+            weatherBackground.style.background = 'linear-gradient(0deg, rgba(14,158,228,1) 0%, rgba(0,50,75,1) 100%)';
+        } else if (weather[0].id >= 200 && weather[0].id <= 232) {
+            weatherBackground.style.background = 'linear-gradient(0deg, rgba(111,134,151,1) 0%, rgba(161,172,183,1) 100%)';
+        } else if (weather[0].id >= 500 && weather[0].id <= 531) {
+            weatherBackground.style.background = 'linear-gradient(0deg, rgba(132,164,187,1) 0%, rgba(204,218,233,1) 100%)';
+        } else if (weather[0].id >= 300 && weather[0].id <= 321) {
+            weatherBackground.style.background = 'linear-gradient(0deg, rgba(150,194,226,1) 0%, rgba(217,236,255,1) 100%)';
+        } else if (weather[0].id >= 701 && weather[0].id <= 781) {
+            weatherBackground.style.background = 'linear-gradient(0deg, rgba(150,194,226,1) 0%, rgba(217,236,255,1) 100%)';
+        }  else if (weather[0].id >= 600 && weather[0].id <= 622) {
+            weatherBackground.style.background = 'linear-gradient(0deg, rgba(132,164,187,1) 0%, rgba(204,218,233,1) 100%)';
+        }
     });    
 } 
 
