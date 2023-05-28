@@ -26,7 +26,25 @@ function displayCurrentWeather(city){
         
         const windSpeed = windToKmPerHour(wind.speed).toFixed(2);
         console.log(windSpeed);
+
+        const currentWeatherDiv = document.querySelector ('.current-weather')
+        currentWeatherDiv.innerHTML =  `
+        <div class="px-3">
+            <div class="fs-2 mb-2"><strong>${name}</strong></div>
+            <div class="fs-4"><strong>${day}</strong>, ${time}</div>
+            <div class="d-flex align-items-center justify-content-center">
+            <strong class="fs-1">${temperature}°C</strong>
+            <img src="${weatherIcon}" />
+            </div>
+        </div>
+        <div class="px-3">
+            <p class="fs-5">Real feel: <strong>${feelsLikeTemperature}°C</strong></p>
+            <p class="fs-5 text-capitalize">${weatherDescription}</p>
+            <p class="fs-5">Vânt: <strong>${windSpeed} km/h</strong></p>
+        </div>
+        `;
     });    
 } 
 
-displayCurrentWeather('Sibiu')
+
+
