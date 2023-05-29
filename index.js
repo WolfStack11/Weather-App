@@ -8,4 +8,22 @@ if(!currentCity) {
 
 currentCityTag.innerHTML = currentCity;
 displayCurrentWeather(currentCity);
+displayWeatherForecast(currentCity);
+
+const scrollBtn = document.querySelector('.scroll-to-top');
+
+scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+});
+
+document.addEventListener('scroll', () => {
+    if (window.scrollY > 800){
+        scrollBtn.style.visibility = 'visible';
+    }else {
+        scrollBtn.style.visibility = 'hidden';
+    }
+});
 

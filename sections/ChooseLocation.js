@@ -12,17 +12,24 @@ function updateWeather (city) {
     localStorage.setItem('city', city);
     updateCurrentCity(city);
     displayCurrentWeather(city);
-
+    displayWeatherForecast(city);
 }
 
-dropdownBucharest.addEventListener('click', () => {
-    updateWeather('București');
-});
+// dropdownBucharest.addEventListener('click', () => {
+//     updateWeather('București');
+// });
 
-dropdownTimisoara.addEventListener('click', () => {
-    updateWeather('Timișoara');
-});
+// dropdownTimisoara.addEventListener('click', () => {
+//     updateWeather('Timișoara');
+// });
 
-dropdownOradea.addEventListener('click', () => {
-    updateWeather('Oradea');
-});
+// dropdownOradea.addEventListener('click', () => {
+//     updateWeather('Oradea');
+// });
+
+const searchBtn = document.querySelector('.search-button');
+const searchInput = document.querySelector('.search-input');
+
+searchBtn.addEventListener ('click', () => {
+    updateWeather(searchInput.value);
+})

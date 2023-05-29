@@ -4,6 +4,8 @@ function displayCurrentWeather(city){
     .then(response => response.json())
     .then(data => {
         console.log(data);
+
+
         const { name, dt, main, weather, wind } = data
 
         const day = getDayOfTheWeek(dt);
@@ -60,6 +62,10 @@ function displayCurrentWeather(city){
         }  else if (weather[0].id >= 600 && weather[0].id <= 622) {
             weatherBackground.style.background = 'linear-gradient(0deg, rgba(132,164,187,1) 0%, rgba(204,218,233,1) 100%)';
         }
+
+        // if(response.status === 404) {
+        //     document.querySelector('.error').style.visibility = "visible"
+        // }
     });    
 } 
 
