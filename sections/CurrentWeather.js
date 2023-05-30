@@ -5,6 +5,13 @@ function displayCurrentWeather(city){
     .then(data => {
         console.log(data);
 
+        if(data.cod === '404') {
+            document.querySelector('.error').style.visibility = "visible"
+            document.querySelector('.current-city').innerHTML = 'invalid';
+        } else {
+            document.querySelector('.error').style.visibility = "hidden"
+        }
+        
 
         const { name, dt, main, weather, wind } = data
 
@@ -63,9 +70,7 @@ function displayCurrentWeather(city){
             weatherBackground.style.background = 'linear-gradient(0deg, rgba(132,164,187,1) 0%, rgba(204,218,233,1) 100%)';
         }
 
-        // if(response.status === 404) {
-        //     document.querySelector('.error').style.visibility = "visible"
-        // }
+
     });    
 } 
 
